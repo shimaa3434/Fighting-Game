@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fighting Game</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        position: relative;
+        display: inline-block;
+    }
+    .bars{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+    }
+    .player-bar{
+        background-color: rgb(228, 17, 175);
+        height: 30px;
+        width: 100%;
+        /* shape-margin: 3px;
+        shape-outside: inset(10px 10px 10px 10px); */
+    }
+    .enemy-bar{
+        background-color: rgb(228, 17, 175);
+        height: 30px;
+    }
+    .timer{
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        shape-outside: circle(50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="bars">
+            <!-- player bar -->
+            <div style="display: flex;  justify-content:flex-end; position: relative;  height: 30px; width: 100%;">
+                <div class="player-bar"></div>
+                <div  id="playerHealth" style="position: absolute; background-color: #ffff; top:0; right: 0;  bottom: 0; width: 100%;"></div>
+            </div>
+            <!-- timer -->
+            <div class="timer" id="timer">10</div>
+            <!-- enemy bar -->
+            <div style="position: relative;  height: 30px; width: 100%;">
+                <div class="enemy-bar"></div>
+                <div  id="enemyHealth" style="position: absolute; background-color: #ffff; top:0; right: 0; left: 0; bottom: 0;"></div>
+            </div>
+        </div>
+        <div id="text" style="position: absolute; color: #fff; display: none; justify-content: center; align-items: center;top:0; left:0; right:0; bottom: 0; ">tie</div>
+        <canvas></canvas>
+    </div>
+   
+    <script src="js/uitls.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
